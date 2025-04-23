@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { IoHome, IoAlertCircle, IoReorderThree } from "react-icons/io5"; // Importar íconos necesarios
 
 const links = [
-  { name: "Inicio", href: "/" },
-  { name: "Acordeon", href: "/accordion" },
-  { name: "Alerta", href: "/alert" },
+  { name: "Inicio", href: "/", icon: IoHome },
+  { name: "Acordeon", href: "/accordion", icon: IoReorderThree },
+  { name: "Alerta", href: "/alert", icon: IoAlertCircle },
 ];
 
 export default function SidebarAndContent({
@@ -22,7 +23,7 @@ export default function SidebarAndContent({
 
   const closeSidebar = () => {
     setIsSidebarOpen(false);
-  }
+  };
 
   return (
     <>
@@ -73,20 +74,7 @@ export default function SidebarAndContent({
                 className="lg:hidden mr-2 text-gray-700 hover:text-black cursor-pointer p-2 hover:bg-gray-200 focus:bg-gray-200 focus:ring-2 focus:ring-gray-300 rounded"
               >
                 {/* Icono de hamburguesa */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3.75 5.75h16.5m-16.5 6.5h16.5m-16.5 6.5h16.5"
-                  />
-                </svg>
+                <IoReorderThree className="w-6 h-6" />
               </button>
             </div>
           </div>
@@ -113,6 +101,8 @@ export default function SidebarAndContent({
                       onClick={closeSidebar}
                       className="text-base capitalize text-gray-700 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 hover:text-gray-900"
                     >
+                      {/* Mostrar ícono y texto */}
+                      <link.icon className="w-5 h-5 text-gray-500" />
                       <span className="ml-3">{link.name}</span>
                     </Link>
                   </li>
