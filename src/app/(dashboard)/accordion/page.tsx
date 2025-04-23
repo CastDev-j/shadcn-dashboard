@@ -32,7 +32,7 @@ export default function Home() {
       <section className="w-full">
         <h1 className="text-2xl font-bold mb-4">Página de Acordeon</h1>
         <p className="text-gray-600 mb-6">
-          Haz clic en el botón de abajo para interactuar.
+          Haz clic en el acordeon para expandir o contraer el contenido.
         </p>
 
         <Accordion type="single">
