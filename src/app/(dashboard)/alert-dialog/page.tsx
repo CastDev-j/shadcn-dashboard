@@ -1,3 +1,5 @@
+"use client";
+
 import {
   AlertDialog,
   AlertDialogAction,
@@ -11,8 +13,11 @@ import {
 } from "@/components/ui/alert-dialog";
 
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 export default function Home() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   return (
     <div className="flex flex-col items-center gap-4">
       <section className="w-full">
@@ -24,10 +29,16 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="w-full flex flex-col gap-4">
-        <AlertDialog>
+      <Button onClick={() => setIsDialogOpen(true)} variant="ghost">
+        Mostrar Diálogo Desde Botón externo
+      </Button>
+
+      <section className="w-full flex flex-col gap-4 justify-center items-center">
+        <AlertDialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <AlertDialogTrigger asChild>
-            <Button variant="outline">Mostrar Diálogo</Button>
+            <Button variant="outline" className="w-fit">
+              Mostrar Diálogo
+            </Button>
           </AlertDialogTrigger>
           <AlertDialogContent>
             <AlertDialogHeader>
@@ -38,8 +49,12 @@ export default function Home() {
               </AlertDialogDescription>
             </AlertDialogHeader>
             <AlertDialogFooter>
-              <AlertDialogCancel>Cancelar</AlertDialogCancel>
-              <AlertDialogAction>Continuar</AlertDialogAction>
+              <AlertDialogCancel onClick={() => console.log("cancelar")}>
+                Cancelar
+              </AlertDialogCancel>
+              <AlertDialogAction onClick={() => console.log("continuar")}>
+                Continuar
+              </AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>
