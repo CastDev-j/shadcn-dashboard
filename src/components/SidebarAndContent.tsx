@@ -2,14 +2,17 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { IoHome, IoMusicalNotes, IoNotifications } from "react-icons/io5"; // Íconos para el sidebar
+import { IoAlertOutline, IoHomeOutline } from "react-icons/io5"; // Íconos para el sidebar
 import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi"; // Íconos para redes sociales
 import { GiHamburgerMenu } from "react-icons/gi";
+import { TfiLayoutAccordionMerged } from "react-icons/tfi";
+import { SiDialogflow } from "react-icons/si";
 
 const links = [
-  { name: "Inicio", href: "/", icon: IoHome },
-  { name: "Acordeon", href: "/accordion", icon: IoMusicalNotes },
-  { name: "Alerta", href: "/alert", icon: IoNotifications },
+  { name: "Inicio", href: "/", icon: IoHomeOutline },
+  { name: "Acordeon", href: "/accordion", icon: TfiLayoutAccordionMerged },
+  { name: "Alerta", href: "/alert", icon: IoAlertOutline },
+  { name: "Dialogo de Alerta", href: "/alert-dialog", icon: SiDialogflow },
 ];
 
 export default function SidebarAndContent({
