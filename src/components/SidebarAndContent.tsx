@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { IoHome, IoAlertCircle, IoReorderThree } from "react-icons/io5"; // Importar íconos necesarios
+import { IoHome, IoMusicalNotes, IoNotifications } from "react-icons/io5"; // Íconos para el sidebar
+import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi"; // Íconos para redes sociales
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const links = [
   { name: "Inicio", href: "/", icon: IoHome },
-  { name: "Acordeon", href: "/accordion", icon: IoReorderThree },
-  { name: "Alerta", href: "/alert", icon: IoAlertCircle },
+  { name: "Acordeon", href: "/accordion", icon: IoMusicalNotes },
+  { name: "Alerta", href: "/alert", icon: IoNotifications },
 ];
 
 export default function SidebarAndContent({
@@ -74,7 +76,7 @@ export default function SidebarAndContent({
                 className="lg:hidden mr-2 text-gray-700 hover:text-black cursor-pointer p-2 hover:bg-gray-200 focus:bg-gray-200 focus:ring-2 focus:ring-gray-300 rounded"
               >
                 {/* Icono de hamburguesa */}
-                <IoReorderThree className="w-6 h-6" />
+                <GiHamburgerMenu />
               </button>
             </div>
           </div>
@@ -135,41 +137,74 @@ export default function SidebarAndContent({
             </div>
           </main>
           <footer className="bg-white text-gray-700 shadow rounded-lg p-4 md:p-6 xl:p-8 my-6 mx-4">
-            <ul className="flex items-center flex-wrap mb-6 md:mb-0">
-              <li>
+            <div className="flex flex-col md:flex-row md:justify-between items-center">
+              {/* Enlaces legales */}
+              <ul className="flex items-center flex-wrap text-sm mb-4 md:mb-0">
+                <li className="mr-4">
+                  <a
+                    href="#"
+                    className="hover:underline hover:text-blue-500 transition-colors"
+                  >
+                    Terms
+                  </a>
+                </li>
+                <li className="mr-4">
+                  <a
+                    href="#"
+                    className="hover:underline hover:text-blue-500 transition-colors"
+                  >
+                    Privacy
+                  </a>
+                </li>
+                <li className="mr-4">
+                  <a
+                    href="#"
+                    className="hover:underline hover:text-blue-500 transition-colors"
+                  >
+                    Licensing
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="hover:underline hover:text-blue-500 transition-colors"
+                  >
+                    Contact
+                  </a>
+                </li>
+              </ul>
+
+              {/* Redes sociales */}
+              <div className="flex space-x-6">
                 <a
-                  href="#"
-                  className="text-sm hover:underline mr-4 hover:text-black"
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-blue-400 transition-colors"
+                  aria-label="Twitter"
                 >
-                  Terms
+                  <FiTwitter className="w-6 h-6" />
                 </a>
-              </li>
-              <li>
                 <a
-                  href="#"
-                  className="text-sm hover:underline mr-4 hover:text-black"
+                  href="https://github.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-black transition-colors"
+                  aria-label="GitHub"
                 >
-                  Privacy
+                  <FiGithub className="w-6 h-6" />
                 </a>
-              </li>
-              <li>
                 <a
-                  href="#"
-                  className="text-sm hover:underline mr-4 hover:text-black"
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-blue-700 transition-colors"
+                  aria-label="LinkedIn"
                 >
-                  Licensing
+                  <FiLinkedin className="w-6 h-6" />
                 </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-sm hover:underline hover:text-black"
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
-            <div className="flex space-x-6">{/* Iconos redes sociales */}</div>
+              </div>
+            </div>
           </footer>
         </div>
       </div>
