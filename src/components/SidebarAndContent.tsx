@@ -4,8 +4,9 @@ import { useState } from "react";
 import Link from "next/link";
 
 const links = [
-  { name: "accordion", href: "accordion" },
-  { name: "alert", href: "alert" },
+  { name: "Inicio", href: "/" },
+  { name: "Acordeon", href: "/accordion" },
+  { name: "Alerta", href: "/alert" },
 ];
 
 export default function SidebarAndContent({
@@ -18,6 +19,10 @@ export default function SidebarAndContent({
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  }
 
   return (
     <>
@@ -105,6 +110,7 @@ export default function SidebarAndContent({
                   <li key={link.href}>
                     <Link
                       href={link.href}
+                      onClick={closeSidebar}
                       className="text-base capitalize text-gray-700 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 hover:text-gray-900"
                     >
                       <span className="ml-3">{link.name}</span>
