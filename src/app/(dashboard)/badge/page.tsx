@@ -2,6 +2,7 @@
 
 import { Badge, badgeVariants } from "@/components/ui/badge";
 import { Link } from "lucide-react";
+import { redirect } from "next/navigation";
 
 export default function Home() {
   return (
@@ -16,14 +17,33 @@ export default function Home() {
       </section>
 
       <section className="w-full flex flex-wrap gap-4 justify-center items-center">
-        <Badge variant="default">default</Badge>
-        <Badge variant="destructive">destructive</Badge>
-        <Badge variant="outline">outline</Badge>
-        <Badge variant="secondary">secondary</Badge>
-        <Badge variant="success">success</Badge>
-        <Badge variant="info">info</Badge>
-        <Link href={'/badge'} className={badgeVariants({ variant: "outline" })}>Badge</Link>
-
+        <Badge variant="default" capitalize>
+          default
+        </Badge>
+        <Badge variant="destructive" capitalize>
+          destructive
+        </Badge>
+        <Badge variant="outline" capitalize>
+          outline
+        </Badge>
+        <Badge variant="secondary" capitalize>
+          secondary
+        </Badge>
+        <Badge variant="success" capitalize>
+          success
+        </Badge>
+        <Badge variant="info" capitalize>
+          info
+        </Badge>
+        <Link
+          className={badgeVariants({ variant: "outline" })}
+          target="_blank"
+          onClick={() => {
+            redirect("/badge");
+          }}
+        >
+          Badge
+        </Link>
       </section>
     </div>
   );
