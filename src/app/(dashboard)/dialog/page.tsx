@@ -15,8 +15,23 @@ import {
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === "j" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        setOpen((open) => !open);
+      }
+    };
+
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down);
+  }, []);
+
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="flex flex-col items-center gap-4">
       <section className="w-full">
@@ -26,10 +41,17 @@ export default function Home() {
           diálogo en una aplicación Next.js. Puedes personalizar el contenido y
           el estilo según tus necesidades.
         </p>
+
+        <p>
+          abre el diálogo presionando{" "}
+          <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+            <span className="text-xs">⌘</span>J
+          </kbd>
+        </p>
       </section>
 
       <section className="w-full flex flex-col gap-4 justify-center items-center">
-        <Dialog>
+        <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
             <Button variant="outline">Share</Button>
           </DialogTrigger>

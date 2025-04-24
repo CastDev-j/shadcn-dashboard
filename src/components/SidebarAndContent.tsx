@@ -8,22 +8,26 @@ import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { TfiLayoutAccordionMerged } from "react-icons/tfi";
 import { CiCalendar } from "react-icons/ci";
-import { SiDialogflow } from "react-icons/si";
+import { FaRegMessage } from "react-icons/fa6";
 import { RxAvatar } from "react-icons/rx";
 import { FaRegAddressCard } from "react-icons/fa";
 import { MdOutlineViewCarousel } from "react-icons/md";
+import { IoIosCheckboxOutline } from "react-icons/io";
+import { RiSlashCommands } from "react-icons/ri";
 
 const links = [
   { name: "Inicio", href: "/", icon: IoHomeOutline },
   { name: "Acordeon", href: "/accordion", icon: TfiLayoutAccordionMerged },
   { name: "Alerta", href: "/alert", icon: IoAlertOutline },
-  { name: "Dialogo de Alerta", href: "/alert-dialog", icon: SiDialogflow },
-  { name: "Dialogo", href: "/dialog", icon: SiDialogflow },
+  { name: "Dialogo de Alerta", href: "/alert-dialog", icon: FaRegMessage },
+  { name: "Dialogo", href: "/dialog", icon: FaRegMessage },
   { name: "Etiqueta", href: "/badge", icon: LuBadge },
   { name: "Calendario", href: "/calendar", icon: CiCalendar },
   { name: "Avatar", href: "/avatar", icon: RxAvatar },
   { name: "Carta", href: "/card", icon: FaRegAddressCard },
-  { name: "Carousel", href: "/carousel", icon: MdOutlineViewCarousel  },
+  { name: "Carousel", href: "/carousel", icon: MdOutlineViewCarousel },
+  { name: "Checkbox", href: "/checkbox", icon: IoIosCheckboxOutline },
+  { name: "Command", href: "/command", icon: RiSlashCommands },
 ];
 
 export default function SidebarAndContent({
