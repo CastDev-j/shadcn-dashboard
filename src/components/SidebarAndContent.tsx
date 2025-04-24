@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { IoAlertOutline, IoHomeOutline } from "react-icons/io5"; // Íconos para el sidebar
-import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi"; // Íconos para redes sociales
+import { IoAlertOutline, IoHomeOutline } from "react-icons/io5"; 
+import { LuBadge } from "react-icons/lu";
+import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { TfiLayoutAccordionMerged } from "react-icons/tfi";
 import { SiDialogflow } from "react-icons/si";
@@ -14,6 +15,7 @@ const links = [
   { name: "Alerta", href: "/alert", icon: IoAlertOutline },
   { name: "Dialogo de Alerta", href: "/alert-dialog", icon: SiDialogflow },
   { name: "Dialogo", href: "/dialog", icon: SiDialogflow },
+  { name: "Badge", href: "/badge", icon: LuBadge },
 ];
 
 export default function SidebarAndContent({
