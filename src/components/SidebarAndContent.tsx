@@ -11,6 +11,7 @@ import { CiCalendar } from "react-icons/ci";
 import { SiDialogflow } from "react-icons/si";
 import { RxAvatar } from "react-icons/rx";
 import { FaRegAddressCard } from "react-icons/fa";
+import { MdOutlineViewCarousel } from "react-icons/md";
 
 const links = [
   { name: "Inicio", href: "/", icon: IoHomeOutline },
@@ -22,6 +23,7 @@ const links = [
   { name: "Calendario", href: "/calendar", icon: CiCalendar },
   { name: "Avatar", href: "/avatar", icon: RxAvatar },
   { name: "Carta", href: "/card", icon: FaRegAddressCard },
+  { name: "Carousel", href: "/carousel", icon: MdOutlineViewCarousel  },
 ];
 
 export default function SidebarAndContent({
