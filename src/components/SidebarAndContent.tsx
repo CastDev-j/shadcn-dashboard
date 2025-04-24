@@ -13,6 +13,7 @@ const links = [
   { name: "Acordeon", href: "/accordion", icon: TfiLayoutAccordionMerged },
   { name: "Alerta", href: "/alert", icon: IoAlertOutline },
   { name: "Dialogo de Alerta", href: "/alert-dialog", icon: SiDialogflow },
+  { name: "Dialogo", href: "/dialog", icon: SiDialogflow },
 ];
 
 export default function SidebarAndContent({
