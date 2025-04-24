@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { IoAlertOutline, IoHomeOutline } from "react-icons/io5"; 
+import { IoAlertOutline, IoHomeOutline } from "react-icons/io5";
 import { LuBadge } from "react-icons/lu";
 import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -10,6 +10,7 @@ import { TfiLayoutAccordionMerged } from "react-icons/tfi";
 import { CiCalendar } from "react-icons/ci";
 import { SiDialogflow } from "react-icons/si";
 import { RxAvatar } from "react-icons/rx";
+import { FaRegAddressCard } from "react-icons/fa";
 
 const links = [
   { name: "Inicio", href: "/", icon: IoHomeOutline },
@@ -17,9 +18,10 @@ const links = [
   { name: "Alerta", href: "/alert", icon: IoAlertOutline },
   { name: "Dialogo de Alerta", href: "/alert-dialog", icon: SiDialogflow },
   { name: "Dialogo", href: "/dialog", icon: SiDialogflow },
-  { name: "Badge", href: "/badge", icon: LuBadge },
-  { name: "Calendar", href: "/calendar", icon: CiCalendar  },
-  { name: "Avatar", href: "/avatar", icon: RxAvatar  },
+  { name: "Etiqueta", href: "/badge", icon: LuBadge },
+  { name: "Calendario", href: "/calendar", icon: CiCalendar },
+  { name: "Avatar", href: "/avatar", icon: RxAvatar },
+  { name: "Carta", href: "/card", icon: FaRegAddressCard },
 ];
 
 export default function SidebarAndContent({
