@@ -27,14 +27,16 @@ export default function TabsPagina() {
 
       <section className="w-full flex flex-col items-center gap-4">
         <Tabs defaultValue="account" className="w-[400px]">
-          <TabsList className="grid w-full grid-cols-2">
+          <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="account">Account</TabsTrigger>
             <TabsTrigger value="password">Password</TabsTrigger>
+            <TabsTrigger value="user">User</TabsTrigger>
           </TabsList>
           <TabsContent value="account">
             Make changes to your account here.
           </TabsContent>
           <TabsContent value="password">Change your password here.</TabsContent>
+          <TabsContent value="user">See your user here.</TabsContent>
         </Tabs>
       </section>
       <section className="w-full flex flex-col items-center gap-4">
