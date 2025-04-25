@@ -14,6 +14,7 @@ import { FaRegAddressCard } from "react-icons/fa";
 import { MdOutlineViewCarousel } from "react-icons/md";
 import { IoIosCheckboxOutline } from "react-icons/io";
 import { RiSlashCommands } from "react-icons/ri";
+import { BsMenuApp, BsMenuDown } from "react-icons/bs";
 
 const links = [
   { name: "Inicio", href: "/", icon: IoHomeOutline },
@@ -28,6 +29,8 @@ const links = [
   { name: "Carousel", href: "/carousel", icon: MdOutlineViewCarousel },
   { name: "Checkbox", href: "/checkbox", icon: IoIosCheckboxOutline },
   { name: "Command", href: "/command", icon: RiSlashCommands },
+  { name: "Combobox", href: "/combobox", icon: BsMenuApp },
+  { name: "Context Menu", href: "/context-menu", icon: BsMenuDown },
 ];
 
 export default function SidebarAndContent({
