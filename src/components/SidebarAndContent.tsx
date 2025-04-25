@@ -7,7 +7,7 @@ import { LuBadge, LuFileSpreadsheet } from "react-icons/lu";
 import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { TfiLayoutAccordionMerged } from "react-icons/tfi";
-import { CiCalendar } from "react-icons/ci";
+import { CiCalendar, CiSliderHorizontal } from "react-icons/ci";
 import { FaBarsProgress, FaRegMessage } from "react-icons/fa6";
 import { RxAvatar } from "react-icons/rx";
 import { FaRegAddressCard } from "react-icons/fa";
@@ -36,6 +36,7 @@ const links = [
   { name: "Progress", href: "/progress", icon: FaBarsProgress },
   { name: "Sheet", href: "/sheet", icon: LuFileSpreadsheet },
   { name: "Skeleton", href: "/skeleton", icon: IoSkullOutline },
+  { name: "Slider", href: "/slider", icon: CiSliderHorizontal },
 ];
 
 export default function SidebarAndContent({
