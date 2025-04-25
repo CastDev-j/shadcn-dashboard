@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { IoAlertOutline, IoHomeOutline } from "react-icons/io5";
-import { LuBadge } from "react-icons/lu";
+import { LuBadge, LuFileSpreadsheet } from "react-icons/lu";
 import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { TfiLayoutAccordionMerged } from "react-icons/tfi";
@@ -32,8 +32,9 @@ const links = [
   { name: "Combobox", href: "/combobox", icon: BsMenuApp },
   { name: "Context Menu", href: "/context-menu", icon: BsMenuDown },
   { name: "Menubar", href: "/menubar", icon: BsMenuDown },
-  { name: "Otp", href: "/otp", icon: MdOutlinePassword  },
-  { name: "Progress", href: "/progress", icon: FaBarsProgress   },
+  { name: "Otp", href: "/otp", icon: MdOutlinePassword },
+  { name: "Progress", href: "/progress", icon: FaBarsProgress },
+  { name: "Sheet", href: "/sheet", icon: LuFileSpreadsheet },
 ];
 
 export default function SidebarAndContent({
