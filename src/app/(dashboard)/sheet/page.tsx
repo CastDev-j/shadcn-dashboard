@@ -17,8 +17,8 @@ import { useState } from "react";
 
 const SHEET_SIDES = ["top", "right", "bottom", "left"] as const;
 
-export default function SheetPage() {
-  const [open, setOpen] = useState(false);
+export default function PaginaHoja() {
+  const [abierto, setAbierto] = useState(false);
 
   return (
     <div className="flex flex-col items-center gap-4">
@@ -32,41 +32,41 @@ export default function SheetPage() {
       </section>
 
       <section className="w-full flex flex-col items-center gap-4">
-        <Button variant="outline" onClick={() => setOpen(true)}>
+        <Button variant="outline" onClick={() => setAbierto(true)}>
           Abre la hoja
         </Button>
       </section>
 
       <section className="w-full flex flex-col items-center gap-4">
-        <Sheet open={open} onOpenChange={setOpen}>
+        <Sheet open={abierto} onOpenChange={setAbierto}>
           <SheetTrigger asChild>
-            <Button variant="outline">Open</Button>
+            <Button variant="outline">Abrir</Button>
           </SheetTrigger>
           <SheetContent>
             <SheetHeader>
-              <SheetTitle>Edit profile</SheetTitle>
+              <SheetTitle>Editar perfil</SheetTitle>
               <SheetDescription>
-                Make changes to your profile here. Click save when you&apos;re
-                done.
+                Realiza cambios en tu perfil aquí. Haz clic en guardar cuando
+                hayas terminado.
               </SheetDescription>
             </SheetHeader>
             <div className="grid gap-4 p-4">
               <div className="grid grid-cols-4 items-center gap-4">
                 <Label htmlFor="name" className="text-right">
-                  Name
+                  Nombre
                 </Label>
                 <Input id="name" value="Pedro Duarte" className="col-span-3" />
               </div>
               <div className="grid grid-cols-4 items-center gap-4">
                 <Label htmlFor="username" className="text-right">
-                  Username
+                  Usuario
                 </Label>
                 <Input id="username" value="@peduarte" className="col-span-3" />
               </div>
             </div>
             <SheetFooter>
               <SheetClose asChild>
-                <Button type="submit">Save changes</Button>
+                <Button type="submit">Guardar cambios</Button>
               </SheetClose>
             </SheetFooter>
           </SheetContent>
@@ -82,16 +82,16 @@ export default function SheetPage() {
               </SheetTrigger>
               <SheetContent side={side}>
                 <SheetHeader>
-                  <SheetTitle>Edit profile</SheetTitle>
+                  <SheetTitle>Editar perfil</SheetTitle>
                   <SheetDescription>
-                    Make changes to your profile here. Click save when
-                    you&apos;re done.
+                    Realiza cambios en tu perfil aquí. Haz clic en guardar
+                    cuando hayas terminado.
                   </SheetDescription>
                 </SheetHeader>
                 <div className="grid gap-4 p-4">
                   <div className="grid grid-cols-4 items-center gap-4">
                     <Label htmlFor="name" className="text-right">
-                      Name
+                      Nombre
                     </Label>
                     <Input
                       id="name"
@@ -101,7 +101,7 @@ export default function SheetPage() {
                   </div>
                   <div className="grid grid-cols-4 items-center gap-4">
                     <Label htmlFor="username" className="text-right">
-                      Username
+                      Usuario
                     </Label>
                     <Input
                       id="username"
@@ -112,7 +112,7 @@ export default function SheetPage() {
                 </div>
                 <SheetFooter>
                   <SheetClose asChild>
-                    <Button type="submit">Save changes</Button>
+                    <Button type="submit">Guardar cambios</Button>
                   </SheetClose>
                 </SheetFooter>
               </SheetContent>

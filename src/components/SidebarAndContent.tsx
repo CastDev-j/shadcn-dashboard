@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { IoAlertOutline, IoHomeOutline } from "react-icons/io5";
+import { IoAlertOutline, IoHomeOutline, IoSkullOutline } from "react-icons/io5";
 import { LuBadge, LuFileSpreadsheet } from "react-icons/lu";
 import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -35,6 +35,7 @@ const links = [
   { name: "Otp", href: "/otp", icon: MdOutlinePassword },
   { name: "Progress", href: "/progress", icon: FaBarsProgress },
   { name: "Sheet", href: "/sheet", icon: LuFileSpreadsheet },
+  { name: "Skeleton", href: "/skeleton", icon: IoSkullOutline },
 ];
 
 export default function SidebarAndContent({
@@ -111,29 +112,29 @@ export default function SidebarAndContent({
         {/* Sidebar */}
         <aside
           id="sidebar"
-          className={`fixed z-20 h-full top-0 left-0 pt-16 lg:flex flex-shrink-0 flex-col w-64 transition-transform duration-300 bg-white text-gray-900 border-r border-gray-300 ${
+          className={`fixed z-20 h-full top-0 left-0 pt-16 lg:flex flex-shrink-0 flex-col w-64 transition-transform duration-300 bg-white text-gray-900 border-r border-gray-300 overflow-y-auto ${
             isSidebarOpen
               ? "translate-x-0"
               : "-translate-x-full lg:translate-x-0"
           }`}
           aria-label="Sidebar"
         >
-          <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+          <div className="flex-1 flex flex-col pt-5 pb-4">
             <div className="flex-1 px-3 divide-y divide-gray-200 space-y-1">
               <ul className="space-y-2 pb-2">
-                {links.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      onClick={closeSidebar}
-                      className="text-base capitalize text-gray-700 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 hover:text-gray-900"
-                    >
-                      {/* Mostrar ícono y texto */}
-                      <link.icon className="w-5 h-5 text-gray-500" />
-                      <span className="ml-3">{link.name}</span>
-                    </Link>
-                  </li>
-                ))}
+          {links.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                onClick={closeSidebar}
+                className="text-base capitalize text-gray-700 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 hover:text-gray-900"
+              >
+                {/* Mostrar ícono y texto */}
+                <link.icon className="w-5 h-5 text-gray-500" />
+                <span className="ml-3">{link.name}</span>
+              </Link>
+            </li>
+          ))}
               </ul>
             </div>
           </div>
