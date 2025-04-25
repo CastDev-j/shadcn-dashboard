@@ -13,10 +13,13 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { useState } from "react";
 
 const SHEET_SIDES = ["top", "right", "bottom", "left"] as const;
 
 export default function SheetPage() {
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="flex flex-col items-center gap-4">
       <section className="w-full">
@@ -29,7 +32,13 @@ export default function SheetPage() {
       </section>
 
       <section className="w-full flex flex-col items-center gap-4">
-        <Sheet>
+        <Button variant="outline" onClick={() => setOpen(true)}>
+          Abre la hoja
+        </Button>
+      </section>
+
+      <section className="w-full flex flex-col items-center gap-4">
+        <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
             <Button variant="outline">Open</Button>
           </SheetTrigger>
@@ -37,7 +46,8 @@ export default function SheetPage() {
             <SheetHeader>
               <SheetTitle>Edit profile</SheetTitle>
               <SheetDescription>
-                Make changes to your profile here. Click save when you&apos;re done.
+                Make changes to your profile here. Click save when you&apos;re
+                done.
               </SheetDescription>
             </SheetHeader>
             <div className="grid gap-4 p-4">
