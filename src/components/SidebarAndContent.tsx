@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { IoAlertOutline, IoHomeOutline, IoSkullOutline } from "react-icons/io5";
+import { IoAlertCircleOutline, IoAlertOutline, IoHomeOutline, IoSkullOutline } from "react-icons/io5";
 import { LuBadge, LuFileSpreadsheet } from "react-icons/lu";
 import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -37,6 +37,7 @@ const links = [
   { name: "Sheet", href: "/sheet", icon: LuFileSpreadsheet },
   { name: "Skeleton", href: "/skeleton", icon: IoSkullOutline },
   { name: "Slider", href: "/slider", icon: CiSliderHorizontal },
+  { name: "Sonner", href: "/sonner", icon: IoAlertCircleOutline },
 ];
 
 export default function SidebarAndContent({
