@@ -23,11 +23,11 @@ export default function ContexMenuPage() {
   return (
     <div className="flex flex-col items-center gap-4">
       <section className="w-full">
-        <h1 className="text-2xl font-bold mb-4">Página de Combobox</h1>
+        <h1 className="text-2xl font-bold mb-4">Página de Menú Contextual</h1>
         <p className="text-gray-600 mb-6">
-          Esta es una página de ejemplo para mostrar el uso de un combobox en
-          una aplicación Next.js. Puedes usar este espacio para agregar más
-          contenido o ejemplos relacionados con el combobox.
+          Esta es una página de ejemplo para mostrar el uso de un menú
+          contextual en una aplicación Next.js. Puedes usar este espacio para
+          agregar más contenido o ejemplos relacionados con el menú contextual.
         </p>
       </section>
 

@@ -8,10 +8,10 @@ import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { TfiLayoutAccordionMerged } from "react-icons/tfi";
 import { CiCalendar } from "react-icons/ci";
-import { FaRegMessage } from "react-icons/fa6";
+import { FaBarsProgress, FaRegMessage } from "react-icons/fa6";
 import { RxAvatar } from "react-icons/rx";
 import { FaRegAddressCard } from "react-icons/fa";
-import { MdOutlineViewCarousel } from "react-icons/md";
+import { MdOutlinePassword, MdOutlineViewCarousel } from "react-icons/md";
 import { IoIosCheckboxOutline } from "react-icons/io";
 import { RiSlashCommands } from "react-icons/ri";
 import { BsMenuApp, BsMenuDown } from "react-icons/bs";
@@ -31,6 +31,9 @@ const links = [
   { name: "Command", href: "/command", icon: RiSlashCommands },
   { name: "Combobox", href: "/combobox", icon: BsMenuApp },
   { name: "Context Menu", href: "/context-menu", icon: BsMenuDown },
+  { name: "Menubar", href: "/menubar", icon: BsMenuDown },
+  { name: "Otp", href: "/otp", icon: MdOutlinePassword  },
+  { name: "Progress", href: "/progress", icon: FaBarsProgress   },
 ];
 
 export default function SidebarAndContent({
@@ -157,7 +160,7 @@ export default function SidebarAndContent({
               </div>
             </div>
           </main>
-          <footer className="bg-white text-gray-700 shadow rounded-lg p-4 md:p-6 xl:p-8 my-6 mx-4">
+          <footer className="bg-white text-gray-700 shadow rounded-lg p-4 md:p-6 xl:p-8 my-6 mx-4 print:hidden">
             <div className="flex flex-col md:flex-row md:justify-between items-center">
               {/* Enlaces legales */}
               <ul className="flex items-center flex-wrap text-sm mb-4 md:mb-0">
