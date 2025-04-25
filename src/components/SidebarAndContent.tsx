@@ -15,6 +15,7 @@ import { MdOutlinePassword, MdOutlineViewCarousel } from "react-icons/md";
 import { IoIosCheckboxOutline } from "react-icons/io";
 import { RiSlashCommands } from "react-icons/ri";
 import { BsMenuApp, BsMenuDown } from "react-icons/bs";
+import { TiTabsOutline } from "react-icons/ti";
 
 const links = [
   { name: "Inicio", href: "/", icon: IoHomeOutline },
@@ -38,6 +39,7 @@ const links = [
   { name: "Skeleton", href: "/skeleton", icon: IoSkullOutline },
   { name: "Slider", href: "/slider", icon: CiSliderHorizontal },
   { name: "Sonner", href: "/sonner", icon: IoAlertCircleOutline },
+  { name: "Tabs", href: "/tabs", icon: TiTabsOutline  },
 ];
 
 export default function SidebarAndContent({

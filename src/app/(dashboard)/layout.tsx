@@ -15,7 +15,7 @@ export default function DashboardLayout({
   return (
     <SidebarAndContent>
       {children}
-      <SonnerToaster />
+      <SonnerToaster richColors  />
     </SidebarAndContent>
   );
 }
