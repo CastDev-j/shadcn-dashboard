@@ -7,7 +7,7 @@ import { LuBadge, LuFileSpreadsheet } from "react-icons/lu";
 import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { TfiLayoutAccordionMerged } from "react-icons/tfi";
-import { CiCalendar, CiSliderHorizontal } from "react-icons/ci";
+import { CiCalendar, CiSliderHorizontal, CiViewTable } from "react-icons/ci";
 import { FaBarsProgress, FaRegMessage } from "react-icons/fa6";
 import { RxAvatar } from "react-icons/rx";
 import { FaRegAddressCard } from "react-icons/fa";
@@ -40,6 +40,7 @@ const links = [
   { name: "Slider", href: "/slider", icon: CiSliderHorizontal },
   { name: "Sonner", href: "/sonner", icon: IoAlertCircleOutline },
   { name: "Tabs", href: "/tabs", icon: TiTabsOutline  },
+  { name: "Data Table", href: "/data-table", icon: CiViewTable  },
 ];
 
 export default function SidebarAndContent({
@@ -96,7 +97,7 @@ export default function SidebarAndContent({
             </div>
             <div className="flex items-center space-x-4 lg:order-2">
               <div className="bg-blue-600 text-white p-2 rounded-full w-12 h-12 flex items-center justify-center">
-                FH
+                AC
               </div>
               <button
                 id="toggleSidebarMobile"
