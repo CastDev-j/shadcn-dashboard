@@ -2,7 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { IoAlertCircleOutline, IoAlertOutline, IoHomeOutline, IoSkullOutline } from "react-icons/io5";
+import {
+  IoAlertCircleOutline,
+  IoAlertOutline,
+  IoHomeOutline,
+  IoSkullOutline,
+} from "react-icons/io5";
 import { LuBadge, LuFileSpreadsheet } from "react-icons/lu";
 import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -11,7 +16,11 @@ import { CiCalendar, CiSliderHorizontal, CiViewTable } from "react-icons/ci";
 import { FaBarsProgress, FaRegMessage } from "react-icons/fa6";
 import { RxAvatar } from "react-icons/rx";
 import { FaRegAddressCard } from "react-icons/fa";
-import { MdOutlinePassword, MdOutlineViewCarousel } from "react-icons/md";
+import {
+  MdFormatAlignCenter,
+  MdOutlinePassword,
+  MdOutlineViewCarousel,
+} from "react-icons/md";
 import { IoIosCheckboxOutline } from "react-icons/io";
 import { RiSlashCommands } from "react-icons/ri";
 import { BsMenuApp, BsMenuDown } from "react-icons/bs";
@@ -39,8 +48,9 @@ const links = [
   { name: "Skeleton", href: "/skeleton", icon: IoSkullOutline },
   { name: "Slider", href: "/slider", icon: CiSliderHorizontal },
   { name: "Sonner", href: "/sonner", icon: IoAlertCircleOutline },
-  { name: "Tabs", href: "/tabs", icon: TiTabsOutline  },
-  { name: "Data Table", href: "/data-table", icon: CiViewTable  },
+  { name: "Tabs", href: "/tabs", icon: TiTabsOutline },
+  { name: "Data Table", href: "/data-table", icon: CiViewTable },
+  { name: "Form", href: "/form", icon: MdFormatAlignCenter },
 ];
 
 export default function SidebarAndContent({
@@ -127,19 +137,19 @@ export default function SidebarAndContent({
           <div className="flex-1 flex flex-col pt-5 pb-4">
             <div className="flex-1 px-3 divide-y divide-gray-200 space-y-1">
               <ul className="space-y-2 pb-2">
-          {links.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                onClick={closeSidebar}
-                className="text-base capitalize text-gray-700 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 hover:text-gray-900"
-              >
-                {/* Mostrar ícono y texto */}
-                <link.icon className="w-5 h-5 text-gray-500" />
-                <span className="ml-3">{link.name}</span>
-              </Link>
-            </li>
-          ))}
+                {links.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      onClick={closeSidebar}
+                      className="text-base capitalize text-gray-700 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 hover:text-gray-900"
+                    >
+                      {/* Mostrar ícono y texto */}
+                      <link.icon className="w-5 h-5 text-gray-500" />
+                      <span className="ml-3">{link.name}</span>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
