@@ -90,11 +90,11 @@ export const columns: ColumnDef<Payment>[] = [
                 });
               }}
             >
-              Copy payment ID
+              Copiar ID de pago
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
+            <DropdownMenuItem>Ver cliente</DropdownMenuItem>
+            <DropdownMenuItem>Ver detalles de pago</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );
