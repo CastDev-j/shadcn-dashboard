@@ -91,7 +91,7 @@ export function DataTable<TData, TValue>({
     <div className="w-full">
       <div className="flex items-center py-4 flex-wrap gap-2">
         <Input
-          placeholder="Buscar por email..."
+          placeholder="Buscar nombre o email..."
           value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
           onChange={(event) => {
             setCurrentStatus("all");

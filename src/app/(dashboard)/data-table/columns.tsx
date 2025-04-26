@@ -2,7 +2,7 @@
 
 import { Payment, PaymentStatus } from "@/data/payments.data";
 import { cn } from "@/lib/utils";
-import { ColumnDef } from "@tanstack/react-table";
+import { ColumnDef, FilterFn, Row } from "@tanstack/react-table";
 import { Checkbox } from "@/components/ui/checkbox";
 
 import { HiDotsHorizontal } from "react-icons/hi";
@@ -23,6 +23,22 @@ const statusEs = {
   processing: "Procesando",
   success: "Exitoso",
   failed: "Fallido",
+};
+
+const myCustomFilterFn: FilterFn<Payment> = (
+  row: Row<Payment>,
+  columnId: string,
+  filterValue: string,
+) => {
+  const filterValues = filterValue.toLowerCase().split(" ");
+
+  const isRowValid = filterValues.every(
+    (filterValue) =>
+      row.original.clientName.toLowerCase().includes(filterValue) ||
+      row.original.email.toLowerCase().includes(filterValue)
+  );
+
+  return isRowValid;
 };
 
 export const columns: ColumnDef<Payment>[] = [
@@ -71,6 +87,7 @@ export const columns: ColumnDef<Payment>[] = [
   },
   {
     accessorKey: "clientName",
+    filterFn: myCustomFilterFn,
     header: ({ column }) => {
       return (
         <Button
@@ -86,6 +103,7 @@ export const columns: ColumnDef<Payment>[] = [
   },
   {
     accessorKey: "email",
+    filterFn: myCustomFilterFn,
     header: ({ column }) => {
       return (
         <Button
