@@ -15,6 +15,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { toast } from "sonner";
+import { LuArrowUpDown } from "react-icons/lu";
 
 const statusEs = {
   pending: "Pendiente",
@@ -47,15 +48,48 @@ export const columns: ColumnDef<Payment>[] = [
   },
   {
     accessorKey: "clientName",
-    header: "Nombre del Cliente",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className="flex items-center justify-start w-full"
+        >
+          <LuArrowUpDown className="mr-2 h-4 w-4" />
+          Cliente
+        </Button>
+      );
+    },
   },
   {
     accessorKey: "email",
-    header: "Correo",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className="flex items-center justify-start w-full"
+        >
+          <LuArrowUpDown className="mr-2 h-4 w-4" />
+          Correo Electrónico
+        </Button>
+      );
+    },
   },
   {
     accessorKey: "amount",
-    header: "Monto",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className="flex items-center justify-start w-full"
+        >
+          <LuArrowUpDown className="mr-2 h-4 w-4" />
+          Monto
+        </Button>
+      );
+    },
     cell: ({ row }) => {
       const amount = parseFloat(row.getValue("amount"));
       const formatted = new Intl.NumberFormat("en-EU", {
