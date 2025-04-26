@@ -1,11 +1,12 @@
 import { payments } from "@/data/payments.data";
+import { DataTable } from "./data-table";
+import { columns } from "./columns";
 
 async function fetchData() {
   return payments();
 }
 export default async function TabsPagina() {
   const data = await fetchData();
-
 
   return (
     <div className="flex flex-col items-center gap-4">
@@ -19,11 +20,7 @@ export default async function TabsPagina() {
       </section>
 
       <section className="w-full flex flex-col items-center gap-4">
-
-            <pre>
-                    {JSON.stringify(data, null, 2)}
-            </pre>
-
+        <DataTable columns={columns} data={data} />
       </section>
     </div>
   );
