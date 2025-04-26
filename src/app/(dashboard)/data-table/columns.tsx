@@ -3,6 +3,7 @@
 import { Payment, PaymentStatus } from "@/data/payments.data";
 import { cn } from "@/lib/utils";
 import { ColumnDef } from "@tanstack/react-table";
+import { Checkbox } from "@/components/ui/checkbox";
 
 import { HiDotsHorizontal } from "react-icons/hi";
 import { Button } from "@/components/ui/button";
@@ -26,6 +27,28 @@ const statusEs = {
 
 export const columns: ColumnDef<Payment>[] = [
   {
+    id: "select",
+    header: ({ table }) => (
+      <Checkbox
+        checked={
+          table.getIsAllPageRowsSelected() ||
+          (table.getIsSomePageRowsSelected() && "indeterminate")
+        }
+        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+        aria-label="Select all"
+      />
+    ),
+    cell: ({ row }) => (
+      <Checkbox
+        checked={row.getIsSelected()}
+        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        aria-label="Select row"
+      />
+    ),
+    enableSorting: false,
+    enableHiding: false,
+  },
+  {
     accessorKey: "status",
     header: "Estado",
     cell: ({ row }) => {
@@ -33,15 +56,15 @@ export const columns: ColumnDef<Payment>[] = [
 
       return (
         <div className="flex items-center justify-start">
-          <span
+          <div
             className={cn("flex size-3 rounded-full mr-2", {
               "bg-emerald-400": status === "success",
               "bg-yellow-400": status === "pending",
               "bg-blue-400 animate-pulse": status === "processing",
               "bg-red-400": status === "failed",
             })}
-          ></span>
-          <span>{statusEs[status]}</span>
+          />
+          <div>{statusEs[status]}</div>
         </div>
       );
     },
