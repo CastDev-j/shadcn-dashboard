@@ -42,6 +42,7 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { FiTrash } from "react-icons/fi";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -126,6 +127,21 @@ export function DataTable<TData, TValue>({
             </SelectGroup>
           </SelectContent>
         </Select>
+
+        <Button
+          size={"icon"}
+          variant={"destructive"}
+          disabled={!table.getIsSomeRowsSelected()}
+          onClick={() => {
+            console.log(
+              table.getSelectedRowModel().rows.map((row) => row.original)
+            );
+
+            setRowSelection({});
+          }}
+        >
+          <FiTrash />
+        </Button>
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
