@@ -67,6 +67,7 @@ export function DataTable<TData, TValue>({
   const [currentStatus, setCurrentStatus] = useState<string>("");
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = useState({});
+  const [numberOfRows, setNumberOfRows] = useState(10);
 
   const table = useReactTable({
     data,
@@ -131,7 +132,7 @@ export function DataTable<TData, TValue>({
         <Button
           size={"icon"}
           variant={"destructive"}
-          disabled={!table.getIsSomeRowsSelected()}
+          disabled={!table.getIsSomeRowsSelected() && !table.getIsAllRowsSelected()}
           onClick={() => {
             console.log(
               table.getSelectedRowModel().rows.map((row) => row.original)
@@ -245,6 +246,30 @@ export function DataTable<TData, TValue>({
             Siguiente
           </Button>
         </div>
+      </div>
+
+      <div className="flex items-center justify-start gap-2 py-4">
+        <Select
+          onValueChange={(value) => {
+            setNumberOfRows(parseInt(value, 10));
+            table.setPageSize(parseInt(value, 10));
+          }}
+          value={numberOfRows.toString()}
+        >
+          {" "}
+          <SelectTrigger className="w-[125px]">
+            <SelectValue placeholder="Estado" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectLabel>Número de filas</SelectLabel>
+              <SelectItem value="10">10</SelectItem>
+              <SelectItem value="15">15</SelectItem>
+              <SelectItem value="25">25</SelectItem>
+              <SelectItem value="50">50</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
       </div>
     </div>
   );
